@@ -5,9 +5,8 @@
 #include "../include/dz.h"
 
 int main() {
-    int64_t decNum;
-    printf("Enter arabian the number: ");
-    scanf("%lld", &decNum);
+    int64_t decNum=47;
+    printf("The arabian number is: %d", decNum);
     if (decNum <= 0) {
         printf("Error number\nIt should be greater then zero\n");
         return INCORRECT_NUMBER;
