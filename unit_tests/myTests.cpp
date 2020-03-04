@@ -8,7 +8,7 @@ extern "C" {
 }
 
 TEST(testMainFunc, test1) {
-    EXPECT_EQ(true,  true);
+    ASSERT_EQ(true, true);
 //    long long decNumber = 123456;
 //    size_t sizeRomeStr = 0;
 //    char *romeStr =  (char*)malloc(sizeRomeStr + 1);
