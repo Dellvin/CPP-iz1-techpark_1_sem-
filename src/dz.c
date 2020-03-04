@@ -5,7 +5,6 @@
 #include "../include/dz.h"
 #include <string.h>
 #include <math.h>
-#include <stdlib.h>
 
 uint16_t getOrder(uint64_t num) {
     uint64_t dozen = 10;

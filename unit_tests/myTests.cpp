@@ -9,12 +9,12 @@ extern "C" {
 
 TEST(testMainFunc, test1) {
     ASSERT_EQ(true, true);
-//    long long decNumber = 123456;
-//    size_t sizeRomeStr = 0;
-//    char *romeStr =  (char*)malloc(sizeRomeStr + 1);
-//    getRomeNumber(decNumber, romeStr, &sizeRomeStr);
-//    ASSERT_EQ(sizeRomeStr, 11);
-//    ASSERT_EQ(strcmp(romeStr, "CXXIIICDLVI"), 0);
+    long long decNumber = 123456;
+    size_t sizeRomeStr = 0;
+    char *romeStr =  (char*)malloc(sizeRomeStr + 1);
+    getRomeNumber(decNumber, romeStr, &sizeRomeStr);
+    ASSERT_EQ(sizeRomeStr, 11);
+    ASSERT_EQ(strcmp(romeStr, "CXXIIICDLVI"), 0);
 //
 //    long long num = 987;
 //    sizeRomeStr = 0;
