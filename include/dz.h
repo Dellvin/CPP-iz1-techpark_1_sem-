@@ -24,11 +24,11 @@ enum order {
 };
 
 
-u_int16_t getOrder(u_int64_t num);
+uint16_t getOrder(uint64_t num);
 
-int breakOnHundreds(u_int64_t num, char *charArr, int sizeChar);
+int breakOnHundreds(uint64_t num, char *charArr, int sizeChar);
 
-char *getRomeNumber(u_int64_t decNum, char *romeNumber, size_t *size);
+char *getRomeNumber(uint64_t decNum, char *romeNumber, size_t *size);
 
 int addCount(char num, enum order type, char *romeString, size_t *size);
 
