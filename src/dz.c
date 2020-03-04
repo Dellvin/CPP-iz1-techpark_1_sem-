@@ -84,7 +84,7 @@ char *getRomeNumber(uint64_t decNum, char *romeNumber, size_t *size) {
             memset(buf, '\0', 3);
         }
     }
-    auto checkRealloc = (char *) realloc(romeNumber, *size + 1);
+    char* checkRealloc = (char *) realloc(romeNumber, *size + 1);
     if (!checkRealloc) {
         free(arr);
         free(romeNumber);
