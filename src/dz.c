@@ -3,7 +3,6 @@
 //
 
 #include "../include/dz.h"
-#include <string.h>
 #include <math.h>
 
 uint16_t getOrder(uint64_t num) {

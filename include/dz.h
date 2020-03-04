@@ -8,6 +8,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define INCORRECT_NUMBER -1
 #define SEGMENTATION_FAULT -2
