@@ -34,6 +34,6 @@ char *getRomeNumber(uint64_t decNum, char *romeNumber, size_t *size);
 
 int addCount(char num, enum order type, char *romeString, size_t *size);
 
-int checkNumber(uint64_t num);
+int checkNumber(int64_t num);
 
 #endif //IZ1_DZ_H
