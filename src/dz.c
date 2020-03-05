@@ -39,7 +39,7 @@ int breakOnHundreds(uint64_t num, char *charArr, int sizeChar) {
     return sizeChar;
 }
 
-int chechNumber(uint64_t num){
+int checkNumber(uint64_t num){
     if (num<=0) return INCORRECT_NUMBER;
     else return 0;
 }
@@ -47,7 +47,7 @@ int chechNumber(uint64_t num){
 char *getRomeNumber(uint64_t decNum, char *romeNumber, size_t *size) {
     romeNumber = (char*)malloc(*size+1);
     if(!romeNumber) return NULL;
-    if (chechNumber(decNum)==INCORRECT_NUMBER)
+    if (checkNumber(decNum)==INCORRECT_NUMBER)
         return NULL;
     int numLength = getOrder(decNum);
     int sizeChar = numLength + (numLength - 1) / 3;
