@@ -24,8 +24,8 @@ TEST(testMainFunc, test1) {
     ASSERT_EQ(strcmp(Str, "CMLXXXVII"), 0);
 
     num=0;
-    ASSERT_EQ(checkNumber(num), INCORRECT_NUMBER);
+    ASSERT_EQ(checkNumber(num), -1);
 
     num=-25536;
-    ASSERT_EQ(checkNumber(num), INCORRECT_NUMBER);
+    ASSERT_EQ(checkNumber(num), -1);
 }
