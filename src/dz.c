@@ -40,7 +40,7 @@ int breakOnHundreds(uint64_t num, char *charArr, int sizeChar) {
 }
 
 int checkNumber(uint64_t num){
-    if (num<=0) return INCORRECT_NUMBER;
+    if (num<=0) return -1;
     else return 0;
 }
 
