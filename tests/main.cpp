@@ -2,7 +2,9 @@
 // Created by paul_s on 02.03.2020.
 //
 
+#include <iostream>
 #include <gtest/gtest.h>
+#include <stdio.h>
 
 extern "C" {
     #include "arabiantorome.h"
@@ -17,19 +19,7 @@ TEST(Test1, test1) {
     romeStr=getRomeNumber(decNumber, romeStr, &sizeRomeStr);
     ASSERT_EQ(sizeRomeStr, 11);
     ASSERT_EQ(strcmp(romeStr, "CXXIIICDLVI"), 0);
-
-    long long num = 987;
-    sizeRomeStr = 0;
-    char *Str = (char*)malloc(sizeRomeStr + 1);
-    Str=getRomeNumber(num, Str, &sizeRomeStr);
-    ASSERT_EQ(sizeRomeStr, 9);
-    ASSERT_EQ(strcmp(Str, "CMLXXXVII"), 0);
-
-    num=0;
-    ASSERT_EQ(checkNumber(num), -1);
-
-    num=-25536;
-    ASSERT_EQ(checkNumber(num), -1);
+    free(romeStr);
 }
 
 TEST(Test2, test1) {
@@ -39,18 +29,12 @@ TEST(Test2, test1) {
     Str=getRomeNumber(num, Str, &sizeRomeStr);
     ASSERT_EQ(sizeRomeStr, 9);
     ASSERT_EQ(strcmp(Str, "CMLXXXVII"), 0);
-
-    num=0;
-    ASSERT_EQ(checkNumber(num), -1);
-
-    num=-25536;
-    ASSERT_EQ(checkNumber(num), -1);
+    free(Str);
 }
 
 TEST(FailTest, test1) {
     size_t num=0;
     ASSERT_EQ(checkNumber(num), -1);
-
     num=-25536;
     ASSERT_EQ(checkNumber(num), -1);
 }
