@@ -14,13 +14,15 @@ include_directories(project/include)
 
 add_executable(hw_1
         project/src/main.c
-        project/include/arabiantorome.h project/src/arabiantorome.c)
+        project/include/arabiantorome.h
+        project/src/arabiantorome.c)
 
 
 add_executable(
         tests
         tests/main.cpp
-        project/include/arabiantorome.h project/src/arabiantorome.c)
+        project/include/arabiantorome.h
+        project/src/arabiantorome.c)
 
 target_link_libraries(tests ${GTEST_LIBRARIES} Threads::Threads)
 
