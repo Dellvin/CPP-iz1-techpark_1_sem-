@@ -22,7 +22,7 @@ add_executable(
         tests
         tests/main.cpp
         project/include/arabiantorome.h
-        project/src/arabiantorome.c)
+        project/src/arabiantorome.c tests/mainTest.cpp)
 
 target_link_libraries(tests ${GTEST_LIBRARIES} Threads::Threads)
 
