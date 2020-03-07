@@ -2,8 +2,8 @@
 // Created by Daniil Tchyorny on 07.03.2020.
 //
 
-#ifndef HW_1_ARABIANTOROME_H
-#define HW_1_ARABIANTOROME_H
+#ifndef PROJECT_INCLUDE_ARABIANTOROME_H_
+#define PROJECT_INCLUDE_ARABIANTOROME_H_
 
 #include <stdint.h>
 #include <stdio.h>
@@ -36,4 +36,4 @@ int addCount(char num, enum order type, char *romeString, size_t *size);
 
 int checkNumber(int64_t num);
 
-#endif //HW_1_ARABIANTOROME_H
+#endif //PROJECT_INCLUDE_ARABIANTOROME_H_

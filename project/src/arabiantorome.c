@@ -19,7 +19,7 @@ int breakOnHundreds(uint64_t num, char *charArr, int sizeChar) {
     int numLength = getOrder(num);
     int size = 0;
     int *arr = NULL;
-    arr = (int *) malloc(numLength * 4);
+    arr = malloc(numLength * 4);
     if (!arr) return SEGMENTATION_FAULT;
     do {
         arr[size] = num % 10;
@@ -39,15 +39,15 @@ int breakOnHundreds(uint64_t num, char *charArr, int sizeChar) {
     return sizeChar;
 }
 
-int checkNumber(int64_t num){
-    if (num<=0) return -1;
+int checkNumber(int64_t num) {
+    if (num <= 0) return -1;
     else return 0;
 }
 
 char *getRomeNumber(uint64_t decNum, char *romeNumber, size_t *size) {
-    romeNumber = (char*)malloc(*size+1);
-    if(!romeNumber) return NULL;
-    if (checkNumber(decNum)==INCORRECT_NUMBER)
+    romeNumber = (char *) malloc(*size + 1);
+    if (!romeNumber) return NULL;
+    if (checkNumber(decNum) == INCORRECT_NUMBER)
         return NULL;
     int numLength = getOrder(decNum);
     int sizeChar = numLength + (numLength - 1) / 3;
@@ -84,7 +84,7 @@ char *getRomeNumber(uint64_t decNum, char *romeNumber, size_t *size) {
             memset(buf, '\0', 3);
         }
     }
-    char* checkRealloc = (char *) realloc(romeNumber, *size + 1);
+    char *checkRealloc = (char *) realloc(romeNumber, *size + 1);
     if (!checkRealloc) {
         free(arr);
         free(romeNumber);
@@ -106,8 +106,8 @@ int addCount(char num, enum order type, char *romeString, size_t *size) {
     if ((num - '0') < 4) {
         for (int i = (num - '0'); i > 0; i--) {
             *size += 1;
-            char* checkRealloc = (char *)realloc(romeString, *size);
-            if (!checkRealloc){
+            char *checkRealloc = (char *) realloc(romeString, *size);
+            if (!checkRealloc) {
                 free(romeString);
                 return SEGMENTATION_FAULT;;
             }
@@ -118,8 +118,8 @@ int addCount(char num, enum order type, char *romeString, size_t *size) {
     if ((num - '0') < 9) {
         if ((num - '0') == 4) {
             *size += 2;
-            char* checkRealloc = (char *) realloc(romeString, *size);
-            if (!checkRealloc){
+            char *checkRealloc = (char *) realloc(romeString, *size);
+            if (!checkRealloc) {
                 free(romeString);
                 return SEGMENTATION_FAULT;;
             }
@@ -128,16 +128,16 @@ int addCount(char num, enum order type, char *romeString, size_t *size) {
         } else {
             *size += 1;
             romeString = (char *) realloc(romeString, *size);
-            char* checkRealloc = (char *) realloc(romeString, *size);
-            if (!checkRealloc){
+            char *checkRealloc = (char *) realloc(romeString, *size);
+            if (!checkRealloc) {
                 free(romeString);
                 return SEGMENTATION_FAULT;;
             }
             romeString[*size - 1] = orderSting[1];
             for (int i = (num - '0'); i > 5; --i) {
                 *size += 1;
-                char* checkRealloc = (char *) realloc(romeString, *size);
-                if (!checkRealloc){
+                char *checkRealloc = (char *) realloc(romeString, *size);
+                if (!checkRealloc) {
                     free(romeString);
                     return SEGMENTATION_FAULT;;
                 }
@@ -147,12 +147,12 @@ int addCount(char num, enum order type, char *romeString, size_t *size) {
         return 0;
     } else {
         *size += 2;
-        char* checkRealloc = (char *) realloc(romeString, *size);
-        if (!checkRealloc){
+        char *checkRealloc = (char *) realloc(romeString, *size);
+        if (!checkRealloc) {
             free(romeString);
             return SEGMENTATION_FAULT;;
         }
-        romeString=checkRealloc;
+        romeString = checkRealloc;
         romeString[*size - 2] = orderSting[0];
         romeString[*size - 1] = orderSting[2];
         return 0;
