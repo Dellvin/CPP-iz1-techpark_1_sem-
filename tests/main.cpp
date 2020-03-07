@@ -3,7 +3,7 @@
 //
 
 #include <gtest/gtest.h>
-#include "arabiantorome.h"
+#include "../project/include/arabiantorome.h"
 
 
 TEST(testMainFunc, test1) {
