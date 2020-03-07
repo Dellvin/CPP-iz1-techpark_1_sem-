@@ -55,7 +55,8 @@ script:
   #
   # CppCheck
   #
-  - os: linux
+  os:
+  - linux
     env:
       - TEST="CppCheck"
     addons:
