@@ -1,9 +1,9 @@
 //
-// Created by Sergei Alexeev on 03.03.2020.
+// Created by Daniil Tchyorny on 07.03.2020.
 //
 
-#ifndef IZ1_DZ_H
-#define IZ1_DZ_H
+#ifndef HW_1_ARABIANTOROME_H
+#define HW_1_ARABIANTOROME_H
 
 #include <stdint.h>
 #include <stdio.h>
@@ -36,4 +36,4 @@ int addCount(char num, enum order type, char *romeString, size_t *size);
 
 int checkNumber(int64_t num);
 
-#endif //IZ1_DZ_H
+#endif //HW_1_ARABIANTOROME_H

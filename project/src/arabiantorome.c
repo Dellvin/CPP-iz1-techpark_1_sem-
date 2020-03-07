@@ -1,8 +1,8 @@
 //
-// Copyright 2018 Your Name <your_email>
+// Created by Daniil Tchyorny on 07.03.2020.
 //
 
-#include "../include/dz.h"
+#include "../include/arabiantorome.h"
 #include <math.h>
 
 uint16_t getOrder(uint64_t num) {
