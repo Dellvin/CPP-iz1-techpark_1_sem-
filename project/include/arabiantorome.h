@@ -36,4 +36,4 @@ int addCount(char num, enum order type, char *romeString, size_t *size);
 
 int checkNumber(int64_t num);
 
-#endif //PROJECT_INCLUDE_ARABIANTOROME_H_
+#endif //  PROJECT_INCLUDE_ARABIANTOROME_H_
