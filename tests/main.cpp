@@ -16,7 +16,6 @@ TEST(testMainFunc, test1) {
     int64_t decNumber = 123456;
     size_t sizeRomeStr = 0;
     char *romeStr = NULL;
-    getRo
     romeStr=getRomeNumber(decNumber, romeStr, &sizeRomeStr);
     ASSERT_EQ(sizeRomeStr, 11);
     ASSERT_EQ(strcmp(romeStr, "CXXIIICDLVI"), 0);
