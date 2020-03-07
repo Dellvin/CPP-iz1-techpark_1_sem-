@@ -6,7 +6,6 @@
 
 int main() {
     int64_t decNum=-47;
-    return 0;//only for travis
     printf("The arabian number is: %ld", decNum);
     if (decNum <= 0) {
         printf("Error number\nIt should be greater then zero\n");
