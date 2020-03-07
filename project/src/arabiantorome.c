@@ -5,6 +5,11 @@
 #include "../include/arabiantorome.h"
 #include <math.h>
 
+static const char *units = "IVX";
+static const char *dozens = "XLC";
+static const char *hundreds = "CDM";
+static const char *thousends = "M";
+
 uint16_t getOrder(uint64_t num) {
     uint64_t dozen = 10;
     int order = 1;

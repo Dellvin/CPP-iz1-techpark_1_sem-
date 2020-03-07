@@ -12,7 +12,7 @@ int main() {
         return 0;
     }
     size_t size = 0;
-    char *answer;
+    char *answer = NULL;
     answer = getRomeNumber(decNum, answer, &size);
     printf("Rome number is: ");
     printf("%s", answer);
