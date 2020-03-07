@@ -11,7 +11,7 @@ extern "C" {
 }
 
 
-TEST(Test1, test1) {
+TEST(test, Test1) {
 ASSERT_EQ(true, true);
 int64_t decNumber = 123456;
 size_t sizeRomeStr = 0;
@@ -22,7 +22,7 @@ ASSERT_EQ(strcmp(romeStr, "CXXIIICDLVI"), 0);
 free(romeStr);
 }
 
-TEST(Test2, test1) {
+TEST(test, Test2) {
 long long num = 987;
 size_t sizeRomeStr = 0;
 char *Str = (char*)malloc(sizeRomeStr + 1);
@@ -32,7 +32,7 @@ ASSERT_EQ(strcmp(Str, "CMLXXXVII"), 0);
 free(Str);
 }
 
-TEST(FailTest, test1) {
+TEST(test, FailTest) {
 size_t num=0;
 ASSERT_EQ(checkNumber(num), -1);
 num=-25536;
