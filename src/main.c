@@ -9,7 +9,7 @@ int main() {
     printf("The arabian number is: %ld", decNum);
     if (decNum <= 0) {
         printf("Error number\nIt should be greater then zero\n");
-        return INCORRECT_NUMBER;
+        return 0;
     }
     size_t size = 0;
     char *answer;
