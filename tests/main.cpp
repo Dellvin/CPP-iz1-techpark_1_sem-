@@ -1,5 +1,5 @@
 //
-// Created by paul_s on 02.03.2020.
+// Created by dellvin on 02.03.2020.
 //
 
 #include <gtest/gtest.h>
