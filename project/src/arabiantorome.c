@@ -99,10 +99,10 @@ char *getRomeNumber(uint64_t decNum, char *romeNumber, size_t *size) {
 
 int addCount(char num, enum order type, char *romeString, size_t *size) {
     char orderSting[4];
-    if (type == THOUSAND) snprintf(orderSting, 4, "%s", units);
-    if (type == HUNDRED) snprintf(orderSting, 4, "%s", hundreds);
-    if (type == DOZEN) snprintf(orderSting, 4, "%s", dozens);
-    if (type == UNIT) snprintf(orderSting, 4, "%s", units);
+    if (type == THOUSAND) snprintf(orderSting, sizeof(orderSting), "%s", units);
+    if (type == HUNDRED) snprintf(orderSting, sizeof(orderSting), "%s", hundreds);
+    if (type == DOZEN) snprintf(orderSting, sizeof(orderSting), "%s", dozens);
+    if (type == UNIT) snprintf(orderSting, sizeof(orderSting), "%s", units);
     if ((num - '0') < 4) {
         for (int i = (num - '0'); i > 0; i--) {
             *size += 1;
