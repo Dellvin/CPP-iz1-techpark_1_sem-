@@ -98,7 +98,7 @@ char *getRomeNumber(uint64_t decNum, char *romeNumber, size_t *size) {
 //    romeNumber = checkRealloc;
 //    romeNumber[*size] = '\0';
 //    free(arr);
-    return romeNumber;
+    return 9;
 }
 
 //  int addCount(char num, enum order type, char *romeString, size_t *size) {
