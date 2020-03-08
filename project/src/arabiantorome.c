@@ -58,10 +58,10 @@ char *getRomeNumber(uint64_t decNum, char *romeNumber, size_t *size) {
     int sizeChar = numLength + (numLength - 1) / 3;
     char *arr = NULL;
     arr = malloc(sizeChar);
-//    if (!arr) {
-//        return NULL;
-//    }
-//    memset(arr, '\0', sizeChar);
+    if (!arr) {
+        return NULL;
+    }
+    memset(arr, '\0', sizeChar);
 //    int sizeOfCharBuf = breakOnHundreds(decNum, arr, sizeChar);
 //    if (sizeOfCharBuf == SEGMENTATION_FAULT) return NULL;
 //
