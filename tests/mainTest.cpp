@@ -28,7 +28,7 @@ size_t sizeRomeStr = 0;
 char *Str;
 Str=getRomeNumber(num, Str, &sizeRomeStr);
 ASSERT_EQ(sizeRomeStr, 3);
-std::cout<<"Size: "<<sizeRomeStr<<"; Str: "<<Str<<std::endl;
+std::cout<<"Size: "<<sizeRomeStr<<"; Str: '"<<Str<<"'"<<std::endl;
 if(Str==NULL){
     std::cout<<"NULL!!!!!!!!!!!!!!!!!!!!!!!";
 }
