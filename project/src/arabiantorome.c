@@ -54,14 +54,14 @@ char *getRomeNumber(uint64_t decNum, char *romeNumber, size_t *size) {
     if (!romeNumber) return NULL;
     if (checkNumber(decNum) == INCORRECT_NUMBER)
         return NULL;
-    int numLength = getOrder(decNum);
-    int sizeChar = numLength + (numLength - 1) / 3;
-    char *arr = NULL;
-    arr = malloc(sizeChar);
-    if (!arr) {
-        return NULL;
-    }
-    memset(arr, '\0', sizeChar);
+//    int numLength = getOrder(decNum);
+//    int sizeChar = numLength + (numLength - 1) / 3;
+//    char *arr = NULL;
+//    arr = malloc(sizeChar);
+//    if (!arr) {
+//        return NULL;
+//    }
+//    memset(arr, '\0', sizeChar);
 //    int sizeOfCharBuf = breakOnHundreds(decNum, arr, sizeChar);
 //    if (sizeOfCharBuf == SEGMENTATION_FAULT) return NULL;
 
@@ -97,7 +97,7 @@ char *getRomeNumber(uint64_t decNum, char *romeNumber, size_t *size) {
 //    }
 //    romeNumber = checkRealloc;
 //    romeNumber[*size] = '\0';
-    free(arr);
+//    free(arr);
     return romeNumber;
 }
 
