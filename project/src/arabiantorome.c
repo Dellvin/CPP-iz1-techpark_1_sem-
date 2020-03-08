@@ -23,7 +23,7 @@ int breakOnHundreds(uint64_t num, char *charArr, int sizeChar) {
     int numLength = getOrder(num);
     int size = 0;
     int *arr = NULL;
-    arr = malloc(numLength, sizeof(int));
+    arr = calloc(numLength, sizeof(int));
     if (!arr) return SEGMENTATION_FAULT;
     do {
         arr[size] = num % 10;
