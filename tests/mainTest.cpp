@@ -27,8 +27,8 @@ long long num = 987;
 size_t sizeRomeStr = 0;
 char *Str = (char*)malloc(sizeRomeStr + 1);
 Str=getRomeNumber(num, Str, &sizeRomeStr);
-//ASSERT_EQ(sizeRomeStr, 9);
-//ASSERT_EQ(strcmp(Str, "CMLXXXVII"), 0);
+ASSERT_EQ(sizeRomeStr, 9);
+ASSERT_EQ(strcmp(Str, "CMLXXXVII"), 0);
 free(Str);
 }
 
