@@ -25,7 +25,7 @@ extern "C" {
 TEST(test, Test2) {
 long long num = 987;
 size_t sizeRomeStr = 0;
-char *Str = (char*)calloc(sizeRomeStr + 1, sizeof(char));
+char *Str;
 Str=getRomeNumber(num, Str, &sizeRomeStr);
 ASSERT_EQ(sizeRomeStr, 9);
 //ASSERT_EQ(strcmp(Str, "CMLXXXVII"), 0);
