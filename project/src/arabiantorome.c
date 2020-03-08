@@ -5,11 +5,11 @@
 #include "../include/arabiantorome.h"
 #include <math.h>
 
-//static const char *units = "IVX";
-//static const char *dozens = "XLC";
-//static const char *hundreds = "CDM";
+//  static const char *units = "IVX";
+//  static const char *dozens = "XLC";
+//  static const char *hundreds = "CDM";
 //
-//uint16_t getOrder(uint64_t num) {
+//  uint16_t getOrder(uint64_t num) {
 //    uint64_t dozen = 10;
 //    int order = 1;
 //    do {
@@ -19,7 +19,7 @@
 //    return order;
 //}
 //
-//int breakOnHundreds(uint64_t num, char *charArr, int sizeChar) {
+//  int breakOnHundreds(uint64_t num, char *charArr, int sizeChar) {
 //    int numLength = getOrder(num);
 //    int size = 0;
 //    int *arr = NULL;
@@ -101,7 +101,7 @@ char *getRomeNumber(uint64_t decNum, char *romeNumber, size_t *size) {
     return romeNumber;
 }
 
-//int addCount(char num, enum order type, char *romeString, size_t *size) {
+//  int addCount(char num, enum order type, char *romeString, size_t *size) {
 //    char orderSting[4];
 //    if (type == THOUSAND) snprintf(orderSting, sizeof(orderSting), "%s", units);
 //    if (type == HUNDRED) snprintf(orderSting, sizeof(orderSting), "%s", hundreds);
