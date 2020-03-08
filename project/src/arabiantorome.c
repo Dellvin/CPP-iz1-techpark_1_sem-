@@ -50,6 +50,7 @@ int checkNumber(int64_t num) {
 }
 
 char *getRomeNumber(uint64_t decNum, char *romeNumber, size_t *size) {
+      romeNumber = calloc(*size + 1);
     if (!romeNumber) return NULL;
     if (checkNumber(decNum) == INCORRECT_NUMBER)
         return NULL;
@@ -74,15 +75,38 @@ char *getRomeNumber(uint64_t decNum, char *romeNumber, size_t *size) {
         if (arr[i] == ' ' || i == 0) {
             if (pos == 1) {
                 if (i > 2 && buf[0] - '0' < 4) {
-                    addCount(buf[0], THOUSAND, romeNumber, size);
-                } else { addCount(buf[0], UNIT, romeNumber, size); }
+                    if(addCount(buf[0], THOUSAND, romeNumber, size)==SEGMENTATION_FAULT){
+                        free(arr);
+                        return NULL;
+                    }
+                } else {
+                    if(addCount(buf[0], UNIT, romeNumber, size)==SEGMENTATION_FAULT){
+                        free(arr);
+                        return NULL;
+                    }
+                }
             } else if (pos == 2) {
-                addCount(buf[0], DOZEN, romeNumber, size);
-                addCount(buf[1], UNIT, romeNumber, size);
+                if(addCount(buf[0], DOZEN, romeNumber, size)==SEGMENTATION_FAULT){
+                    free(arr);
+                    return NULL;
+                }
+                if(addCount(buf[1], UNIT, romeNumber, size)==SEGMENTATION_FAULT){
+                    free(arr);
+                    return NULL;
+                }
             } else {
-                addCount(buf[0], HUNDRED, romeNumber, size);
-                addCount(buf[1], DOZEN, romeNumber, size);
-                addCount(buf[2], UNIT, romeNumber, size);
+                if(addCount(buf[0], HUNDRED, romeNumber, size)==SEGMENTATION_FAULT){
+                    free(arr);
+                    return NULL;
+                }
+                if(addCount(buf[1], DOZEN, romeNumber, size)==SEGMENTATION_FAULT){
+                    free(arr);
+                    return NULL;
+                }
+                if(addCount(buf[2], UNIT, romeNumber, size)==SEGMENTATION_FAULT){
+                    free(arr);
+                    return NULL;
+                }
             }
             pos = 0;
             memset(buf, '\0', 3);
@@ -130,12 +154,12 @@ char *getRomeNumber(uint64_t decNum, char *romeNumber, size_t *size) {
             romeString[*size - 1] = orderSting[1];
         } else {
             *size += 1;
-            romeString = realloc(romeString, *size);
             char *checkRealloc = realloc(romeString, *size);
             if (!checkRealloc) {
                 free(romeString);
                 return SEGMENTATION_FAULT;;
             }
+            romeString=checkRealloc;
             romeString[*size - 1] = orderSting[1];
             for (int i = (num - '0'); i > 5; --i) {
                 *size += 1;
@@ -144,6 +168,7 @@ char *getRomeNumber(uint64_t decNum, char *romeNumber, size_t *size) {
                     free(romeString);
                     return SEGMENTATION_FAULT;;
                 }
+                romeString=checkRealloc
                 romeString[*size - 1] = orderSting[0];
             }
         }
