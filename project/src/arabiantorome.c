@@ -54,7 +54,7 @@ char *getRomeNumber(uint64_t decNum, char *romeNumber, size_t *size) {
     if (!romeNumber) return NULL;
     if (checkNumber(decNum) == INCORRECT_NUMBER)
         return NULL;
-//    int numLength = getOrder(decNum);
+    int numLength = getOrder(decNum);
 //    int sizeChar = numLength + (numLength - 1) / 3;
 //    char *arr = NULL;
 //    arr = malloc(sizeChar);
