@@ -62,33 +62,33 @@ char *getRomeNumber(uint64_t decNum, char *romeNumber, size_t *size) {
         return NULL;
     }
     memset(arr, '\0', sizeChar);
-    int sizeOfCharBuf = breakOnHundreds(decNum, arr, sizeChar);
-    if (sizeOfCharBuf == SEGMENTATION_FAULT) return NULL;
+//    int sizeOfCharBuf = breakOnHundreds(decNum, arr, sizeChar);
+//    if (sizeOfCharBuf == SEGMENTATION_FAULT) return NULL;
 
-    char buf[3] = {0};
-    int pos = 0;
-    for (int i = sizeOfCharBuf - 1; i >= 0; --i) {
-        if (arr[i] != ' ') {
-            buf[pos] = arr[i];
-            pos++;
-        }
-        if (arr[i] == ' ' || i == 0) {
-            if (pos == 1) {
-//                if (i > 2 && buf[0] - '0' < 4) {
-////                    addCount(buf[0], THOUSAND, romeNumber, size);
-//                } else { addCount(buf[0], UNIT, romeNumber, size); }
-            } else if (pos == 2) {
-//                addCount(buf[0], DOZEN, romeNumber, size);
-//                addCount(buf[1], UNIT, romeNumber, size);
-            } else {
-//                addCount(buf[0], HUNDRED, romeNumber, size);
-//                addCount(buf[1], DOZEN, romeNumber, size);
-//                addCount(buf[2], UNIT, romeNumber, size);
-            }
-            pos = 0;
-            memset(buf, '\0', 3);
-        }
-    }
+//    char buf[3] = {0};
+//    int pos = 0;
+//    for (int i = sizeOfCharBuf - 1; i >= 0; --i) {
+//        if (arr[i] != ' ') {
+//            buf[pos] = arr[i];
+//            pos++;
+//        }
+//        if (arr[i] == ' ' || i == 0) {
+//            if (pos == 1) {
+////                if (i > 2 && buf[0] - '0' < 4) {
+//////                    addCount(buf[0], THOUSAND, romeNumber, size);
+////                } else { addCount(buf[0], UNIT, romeNumber, size); }
+//            } else if (pos == 2) {
+////                addCount(buf[0], DOZEN, romeNumber, size);
+////                addCount(buf[1], UNIT, romeNumber, size);
+//            } else {
+////                addCount(buf[0], HUNDRED, romeNumber, size);
+////                addCount(buf[1], DOZEN, romeNumber, size);
+////                addCount(buf[2], UNIT, romeNumber, size);
+//            }
+//            pos = 0;
+//            memset(buf, '\0', 3);
+//        }
+//    }
 //    char *checkRealloc = realloc(romeNumber, *size + 1);
 //    if (!checkRealloc) {
 //        free(arr);
