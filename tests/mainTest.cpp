@@ -29,6 +29,9 @@ char *Str;
 Str=getRomeNumber(num, Str, &sizeRomeStr);
 ASSERT_EQ(sizeRomeStr, 3);
 std::cout<<"Size: "<<sizeRomeStr<<"; Str: "<<Str<<std::endl;
+if(Str==NULL){
+    std::cout<<"NULL!!!!!!!!!!!!!!!!!!!!!!!";
+}
 //ASSERT_EQ(strncmp(Str, "CMLXXXVII", 9), 0);
 free(Str);
 }
