@@ -51,53 +51,53 @@ int checkNumber(int64_t num) {
 
 char *getRomeNumber(uint64_t decNum, char *romeNumber, size_t *size) {
     romeNumber = malloc(*size + 1);
-    if (!romeNumber) return NULL;
-    if (checkNumber(decNum) == INCORRECT_NUMBER)
-        return NULL;
-    int numLength = getOrder(decNum);
-    int sizeChar = numLength + (numLength - 1) / 3;
-    char *arr = NULL;
-    arr = malloc(sizeChar);
-    if (!arr) {
-        return NULL;
-    }
-    memset(arr, '\0', sizeChar);
-    int sizeOfCharBuf = breakOnHundreds(decNum, arr, sizeChar);
-    if (sizeOfCharBuf == SEGMENTATION_FAULT) return NULL;
-
-    char buf[3] = {0};
-    int pos = 0;
-    for (int i = sizeOfCharBuf - 1; i >= 0; --i) {
-        if (arr[i] != ' ') {
-            buf[pos] = arr[i];
-            pos++;
-        }
-        if (arr[i] == ' ' || i == 0) {
-            if (pos == 1) {
-                if (i > 2 && buf[0] - '0' < 4) {
-                    addCount(buf[0], THOUSAND, romeNumber, size);
-                } else { addCount(buf[0], UNIT, romeNumber, size); }
-            } else if (pos == 2) {
-                addCount(buf[0], DOZEN, romeNumber, size);
-                addCount(buf[1], UNIT, romeNumber, size);
-            } else {
-                addCount(buf[0], HUNDRED, romeNumber, size);
-                addCount(buf[1], DOZEN, romeNumber, size);
-                addCount(buf[2], UNIT, romeNumber, size);
-            }
-            pos = 0;
-            memset(buf, '\0', 3);
-        }
-    }
-    char *checkRealloc = realloc(romeNumber, *size + 1);
-    if (!checkRealloc) {
-        free(arr);
-        free(romeNumber);
-        return NULL;
-    }
-    romeNumber = checkRealloc;
-    romeNumber[*size] = '\0';
-    free(arr);
+//    if (!romeNumber) return NULL;
+//    if (checkNumber(decNum) == INCORRECT_NUMBER)
+//        return NULL;
+//    int numLength = getOrder(decNum);
+//    int sizeChar = numLength + (numLength - 1) / 3;
+//    char *arr = NULL;
+//    arr = malloc(sizeChar);
+//    if (!arr) {
+//        return NULL;
+//    }
+//    memset(arr, '\0', sizeChar);
+//    int sizeOfCharBuf = breakOnHundreds(decNum, arr, sizeChar);
+//    if (sizeOfCharBuf == SEGMENTATION_FAULT) return NULL;
+//
+//    char buf[3] = {0};
+//    int pos = 0;
+//    for (int i = sizeOfCharBuf - 1; i >= 0; --i) {
+//        if (arr[i] != ' ') {
+//            buf[pos] = arr[i];
+//            pos++;
+//        }
+//        if (arr[i] == ' ' || i == 0) {
+//            if (pos == 1) {
+//                if (i > 2 && buf[0] - '0' < 4) {
+//                    addCount(buf[0], THOUSAND, romeNumber, size);
+//                } else { addCount(buf[0], UNIT, romeNumber, size); }
+//            } else if (pos == 2) {
+//                addCount(buf[0], DOZEN, romeNumber, size);
+//                addCount(buf[1], UNIT, romeNumber, size);
+//            } else {
+//                addCount(buf[0], HUNDRED, romeNumber, size);
+//                addCount(buf[1], DOZEN, romeNumber, size);
+//                addCount(buf[2], UNIT, romeNumber, size);
+//            }
+//            pos = 0;
+//            memset(buf, '\0', 3);
+//        }
+//    }
+//    char *checkRealloc = realloc(romeNumber, *size + 1);
+//    if (!checkRealloc) {
+//        free(arr);
+//        free(romeNumber);
+//        return NULL;
+//    }
+//    romeNumber = checkRealloc;
+//    romeNumber[*size] = '\0';
+//    free(arr);
     return romeNumber;
 }
 
