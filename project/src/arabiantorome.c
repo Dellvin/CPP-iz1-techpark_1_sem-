@@ -23,7 +23,7 @@ int breakOnHundreds(uint64_t num, char *charArr, int sizeChar) {
     int numLength = getOrder(num);
     int size = 0;
     int *arr = NULL;
-    arr = malloc(numLength * 4);
+    arr = malloc(numLength, sizeof(int));
     if (!arr) return SEGMENTATION_FAULT;
     do {
         arr[size] = num % 10;
@@ -63,6 +63,11 @@ char *getRomeNumber(uint64_t decNum, char *romeNumber, size_t *size) {
     }
     memset(arr, '\0', sizeChar);
     int sizeOfCharBuf = breakOnHundreds(decNum, arr, sizeChar);
+    if(sizeOfCharBuf==SEGMENTATION_FAULT){
+        free(arr);
+        free(romeNumber);
+        return NULL;
+    }
     if (sizeOfCharBuf == SEGMENTATION_FAULT) return NULL;
 
     char buf[3] = {0};
