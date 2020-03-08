@@ -77,14 +77,14 @@ char *getRomeNumber(uint64_t decNum, char *romeNumber, size_t *size) {
 //                if (i > 2 && buf[0] - '0' < 4) {
 //                    addCount(buf[0], THOUSAND, romeNumber, size);
 //                } else { addCount(buf[0], UNIT, romeNumber, size); }
-//            } else if (pos == 2) {
+            } else if (pos == 2) {
 //                addCount(buf[0], DOZEN, romeNumber, size);
 //                addCount(buf[1], UNIT, romeNumber, size);
-//            } else {
+            } else {
 //                addCount(buf[0], HUNDRED, romeNumber, size);
 //                addCount(buf[1], DOZEN, romeNumber, size);
 //                addCount(buf[2], UNIT, romeNumber, size);
-//            }
+            }
             pos = 0;
             memset(buf, '\0', 3);
         }
