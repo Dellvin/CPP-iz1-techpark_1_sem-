@@ -138,6 +138,7 @@ char *getRomeNumber(uint64_t decNum, char *romeNumber, size_t *size) {
                 free(romeString);
                 return SEGMENTATION_FAULT;;
             }
+            romeString=checkRealloc;
             romeString[*size - 1] = orderSting[0];
         }
         return 0;
@@ -150,6 +151,7 @@ char *getRomeNumber(uint64_t decNum, char *romeNumber, size_t *size) {
                 free(romeString);
                 return SEGMENTATION_FAULT;;
             }
+            romeString = checkRealloc;
             romeString[*size - 2] = orderSting[0];
             romeString[*size - 1] = orderSting[1];
         } else {
@@ -168,7 +170,7 @@ char *getRomeNumber(uint64_t decNum, char *romeNumber, size_t *size) {
                     free(romeString);
                     return SEGMENTATION_FAULT;;
                 }
-                romeString=checkRealloc
+                romeString=checkRealloc;
                 romeString[*size - 1] = orderSting[0];
             }
         }
