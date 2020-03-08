@@ -22,15 +22,15 @@ extern "C" {
 //free(romeStr);
 //}
 //
-//TEST(test, Test2) {
-//long long num = 987;
-//size_t sizeRomeStr = 0;
-//char *Str = (char*)malloc(sizeRomeStr + 1);
+TEST(test, Test2) {
+long long num = 987;
+size_t sizeRomeStr = 0;
+char *Str = (char*)malloc(sizeRomeStr + 1);
 //Str=getRomeNumber(num, Str, &sizeRomeStr);
 //ASSERT_EQ(sizeRomeStr, 9);
 //ASSERT_EQ(strcmp(Str, "CMLXXXVII"), 0);
-//free(Str);
-//}
+free(Str);
+}
 
 TEST(test, FailTest) {
 size_t num=0;
