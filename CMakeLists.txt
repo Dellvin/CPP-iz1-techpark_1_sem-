@@ -12,7 +12,7 @@ find_package(Threads REQUIRED)
 include_directories("${GTEST_INCLUDE_DIRS}")
 include_directories(project/include)
 
-add_executable(hw_1
+add_executable(branchForTests
         project/src/main.c
         project/include/arabiantorome.h
         project/src/arabiantorome.c)
