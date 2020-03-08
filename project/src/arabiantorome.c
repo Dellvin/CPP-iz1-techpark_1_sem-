@@ -62,7 +62,7 @@ char *getRomeNumber(uint64_t decNum, char *romeNumber, size_t *size) {
         return NULL;
     }
     memset(arr, '\0', sizeChar);
-//    int sizeOfCharBuf = breakOnHundreds(decNum, arr, sizeChar);
+    int sizeOfCharBuf = breakOnHundreds(decNum, arr, sizeChar);
 //    if (sizeOfCharBuf == SEGMENTATION_FAULT) return NULL;
 //
 //    char buf[3] = {0};
