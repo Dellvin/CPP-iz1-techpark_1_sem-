@@ -27,7 +27,7 @@ long long num = 987;
 size_t sizeRomeStr = 0;
 char *Str;
 Str=getRomeNumber(num, Str, &sizeRomeStr);
-ASSERT_EQ(sizeRomeStr, 9);
+ASSERT_EQ(sizeRomeStr, 3);
 //ASSERT_EQ(strncmp(Str, "CMLXXXVII", 9), 0);
 free(Str);
 }
