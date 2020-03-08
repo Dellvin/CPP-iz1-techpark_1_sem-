@@ -72,8 +72,8 @@ char *getRomeNumber(uint64_t decNum, char *romeNumber, size_t *size) {
             buf[pos] = arr[i];
             pos++;
         }
-//        if (arr[i] == ' ' || i == 0) {
-//            if (pos == 1) {
+        if (arr[i] == ' ' || i == 0) {
+            if (pos == 1) {
 //                if (i > 2 && buf[0] - '0' < 4) {
 //                    addCount(buf[0], THOUSAND, romeNumber, size);
 //                } else { addCount(buf[0], UNIT, romeNumber, size); }
@@ -85,9 +85,9 @@ char *getRomeNumber(uint64_t decNum, char *romeNumber, size_t *size) {
 //                addCount(buf[1], DOZEN, romeNumber, size);
 //                addCount(buf[2], UNIT, romeNumber, size);
 //            }
-//            pos = 0;
-//            memset(buf, '\0', 3);
-//        }
+            pos = 0;
+            memset(buf, '\0', 3);
+        }
     }
 //    char *checkRealloc = realloc(romeNumber, *size + 1);
 //    if (!checkRealloc) {
