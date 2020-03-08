@@ -50,7 +50,6 @@ int checkNumber(int64_t num) {
 }
 
 char *getRomeNumber(uint64_t decNum, char *romeNumber, size_t *size) {
-    romeNumber = (char*) calloc(*size + 1, sizeof(char));
     if (!romeNumber) return NULL;
     if (checkNumber(decNum) == INCORRECT_NUMBER)
         return NULL;
