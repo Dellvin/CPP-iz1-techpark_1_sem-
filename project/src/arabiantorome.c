@@ -74,9 +74,9 @@ char *getRomeNumber(uint64_t decNum, char *romeNumber, size_t *size) {
         }
         if (arr[i] == ' ' || i == 0) {
             if (pos == 1) {
-                if (i > 2 && buf[0] - '0' < 4) {
-//                    addCount(buf[0], THOUSAND, romeNumber, size);
-                } else { addCount(buf[0], UNIT, romeNumber, size); }
+//                if (i > 2 && buf[0] - '0' < 4) {
+////                    addCount(buf[0], THOUSAND, romeNumber, size);
+//                } else { addCount(buf[0], UNIT, romeNumber, size); }
             } else if (pos == 2) {
 //                addCount(buf[0], DOZEN, romeNumber, size);
 //                addCount(buf[1], UNIT, romeNumber, size);
