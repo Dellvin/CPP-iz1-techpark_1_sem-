@@ -17,13 +17,5 @@ int main() {
     printf("\nRome number is: ");
     printf("%s", answer);
     printf("\nsize: %lu\n", size);
-
-//    long long num = 98;
-//    size_t sizeRomeStr = 0;
-//    char *Str=NULL;
-//    Str=getRomeNumber(num, Str, &sizeRomeStr);
-//    printf("size: %lu", sizeRomeStr);
-//    printf("str: %s", Str);
-    //free(Str);
     return 0;
 }
