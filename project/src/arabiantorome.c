@@ -3,7 +3,6 @@
 //
 
 #include "../include/arabiantorome.h"
-#include <math.h>
 
 static const char *units = "IVX";
 static const char *dozens = "XLC";

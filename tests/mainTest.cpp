@@ -25,7 +25,7 @@ extern "C" {
 TEST(test, Test2) {
 long long num = 98;
 size_t sizeRomeStr = 0;
-char *Str;
+char *Str=NULL;
 Str=getRomeNumber(num, Str, &sizeRomeStr);
 EXPECT_EQ(sizeRomeStr, 6);
 std::cout<<"Size: "<<sizeRomeStr<<"; Str: '"<<Str<<"'"<<std::endl;
