@@ -27,18 +27,18 @@ long long num = 98;
 size_t sizeRomeStr = 0;
 char *Str=NULL;
 Str=getRomeNumber(num, Str, &sizeRomeStr);
-EXPECT_EQ(sizeRomeStr, 6);
 std::cout<<"Size: "<<sizeRomeStr<<"; Str: '"<<Str<<"'"<<std::endl;
 if(Str==NULL){
-    std::cout<<"NULL!!!!!!!!!!!!!!!!!!!!!!!";
+std::cout<<"NULL!!!!!!!!!!!!!!!!!!!!!!!";
 }
+ASSERT_EQ(sizeRomeStr, 6);
 //ASSERT_EQ(strncmp(Str, "CMLXXXVII", 9), 0);
 free(Str);
 }
 
 TEST(test, FailTest) {
 size_t num=0;
-EXPECT_EQ(checkNumber(num), -1);
+ASSERT_EQ(checkNumber(num), -1);
 num=-25536;
-EXPECT_EQ(checkNumber(num), -1);
+ASSERT_EQ(checkNumber(num), -1);
 }
