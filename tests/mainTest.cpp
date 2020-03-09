@@ -27,7 +27,7 @@ long long num = 98;
 size_t sizeRomeStr = 0;
 char *Str;
 Str=getRomeNumber(num, Str, &sizeRomeStr);
-ASSERT_EQ(sizeRomeStr, 6);
+EXPECT_EQ(sizeRomeStr, 6);
 std::cout<<"Size: "<<sizeRomeStr<<"; Str: '"<<Str<<"'"<<std::endl;
 if(Str==NULL){
     std::cout<<"NULL!!!!!!!!!!!!!!!!!!!!!!!";
@@ -38,7 +38,7 @@ free(Str);
 
 TEST(test, FailTest) {
 size_t num=0;
-ASSERT_EQ(checkNumber(num), -1);
+EXPECT_EQ(checkNumber(num), -1);
 num=-25536;
-ASSERT_EQ(checkNumber(num), -1);
+EXPECT_EQ(checkNumber(num), -1);
 }
