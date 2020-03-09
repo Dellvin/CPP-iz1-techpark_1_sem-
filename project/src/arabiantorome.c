@@ -169,12 +169,12 @@ int addCount(char num, enum order type, char *romeString, size_t *size) {
             romeString[*size - 1] = orderSting[1];
             for (int i = (num - '0'); i > 5; --i) {
                 *size += 1;
-                char *checkRealloc = realloc(romeString, *size);
-                if (!checkRealloc) {
+                char *checkRealloc2 = realloc(romeString, *size);
+                if (!checkRealloc2) {
                     free(romeString);
                     return SEGMENTATION_FAULT;;
                 }
-                romeString = checkRealloc;
+                romeString = checkRealloc2;
                 romeString[*size - 1] = orderSting[0];
             }
         }
