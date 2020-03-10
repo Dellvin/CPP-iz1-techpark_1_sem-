@@ -33,11 +33,11 @@ TEST(test, Test2) {
         std::cout<<"NULL!!!!!!!!!!!!!!!!!!!!!!!";
     }
 
-    strncmp(Str, "CMLXXXVII", 9);
-
-    ASSERT_EQ(sizeRomeStr, 6);
-//ASSERT_EQ(strncmp(Str, "CMLXXXVII", 9), 0);
+    int i=strncmp(Str, "CMLXXXVII", 9);
     free(Str);
+    ASSERT_EQ(sizeRomeStr, 6);
+    ASSERT_EQ(i, 0);
+
 }
 
 TEST(test, FailTest) {
