@@ -14,7 +14,7 @@ add_subdirectory(${CMAKE_BINARY_DIR}/googletest-src
         ${CMAKE_BINARY_DIR}/googletest-build)
 
 enable_testing()
-add_subdirectory(unit_tests)
+add_subdirectory(tests)
 
 include_directories("${PROJECT_SOURCE_DIR}/include")
 
