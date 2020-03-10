@@ -1,31 +1,26 @@
-cmake_minimum_required(VERSION 3.12)
-project(hw_1 C CXX)
+cmake_minimum_required(VERSION 3.9)
+project(hw_1 C)
+enable_language(C CXX)
+set(CMAKE_C_FLAGS  "-std=c11")
 
-set(CMAKE_C_STANDARD 11)
-set(CMAKE_C_FLAGS "-Wall -Wextra -Werror --coverage")
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wpedantic")
-set(CMAKE_CXX_FLAGS "--coverage")
+configure_file(CMakeLists.txt.in
+        googletest-download/CMakeLists.txt)
+execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
+        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/googletest-download )
+execute_process(COMMAND ${CMAKE_COMMAND} --build .
+        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/googletest-download )
 
-find_package(GTest REQUIRED)
-find_package(Threads REQUIRED)
-
-include_directories("${GTEST_INCLUDE_DIRS}")
-include_directories(project/include)
-
-add_executable(branchForTests
-        project/src/main.c
-        project/include/arabiantorome.h
-        project/src/arabiantorome.c)
-
-
-add_executable(
-        tests
-        tests/main.cpp
-        project/include/arabiantorome.h
-        project/src/arabiantorome.c tests/mainTest.cpp)
-
-target_link_libraries(tests ${GTEST_LIBRARIES} Threads::Threads)
-
+add_subdirectory(${CMAKE_BINARY_DIR}/googletest-src
+        ${CMAKE_BINARY_DIR}/googletest-build)
 
 enable_testing()
-add_test(tests "./tests")
+add_subdirectory(unit_tests)
+
+include_directories("${PROJECT_SOURCE_DIR}/include")
+
+file(GLOB sources
+        "${PROJECT_SOURCE_DIR}/include/*.h"
+        "${PROJECT_SOURCE_DIR}/src/*.c"
+        "${PROJECT_SOURCE_DIR}/src/*.cpp")
+
+add_executable(hw_1 ${sources})

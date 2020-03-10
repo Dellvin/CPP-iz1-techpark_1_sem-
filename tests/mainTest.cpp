@@ -31,6 +31,9 @@ std::cout<<"Size: "<<sizeRomeStr<<"; Str: '"<<Str<<"'"<<std::endl;
 if(Str==NULL){
 std::cout<<"NULL!!!!!!!!!!!!!!!!!!!!!!!";
 }
+
+strncmp(Str, "CMLXXXVII", 9);
+
 ASSERT_EQ(sizeRomeStr, 6);
 //ASSERT_EQ(strncmp(Str, "CMLXXXVII", 9), 0);
 free(Str);
