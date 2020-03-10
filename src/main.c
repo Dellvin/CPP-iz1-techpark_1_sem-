@@ -2,7 +2,7 @@
 // Created by Daniil Tchyorny on 03.03.2020.
 //
 
-#include "../include/arabiantorome.h"
+#include "../include/dz.h"
 
 int main() {
     int64_t decNum = 98;

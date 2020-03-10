@@ -6,8 +6,9 @@
 #include <gtest/gtest.h>
 #include <stdio.h>
 
+#include "gtest/gtest.h"
 extern "C" {
-#include "arabiantorome.h"
+#include "dz.h"
 }
 
 
@@ -23,25 +24,25 @@ extern "C" {
 //}
 //
 TEST(test, Test2) {
-long long num = 98;
-size_t sizeRomeStr = 0;
-char *Str=NULL;
-Str=getRomeNumber(num, Str, &sizeRomeStr);
-std::cout<<"Size: "<<sizeRomeStr<<"; Str: '"<<Str<<"'"<<std::endl;
-if(Str==NULL){
-std::cout<<"NULL!!!!!!!!!!!!!!!!!!!!!!!";
-}
+    long long num = 98;
+    size_t sizeRomeStr = 0;
+    char *Str=NULL;
+    Str=getRomeNumber(num, Str, &sizeRomeStr);
+    std::cout<<"Size: "<<sizeRomeStr<<"; Str: '"<<Str<<"'"<<std::endl;
+    if(Str==NULL){
+        std::cout<<"NULL!!!!!!!!!!!!!!!!!!!!!!!";
+    }
 
-strncmp(Str, "CMLXXXVII", 9);
+    strncmp(Str, "CMLXXXVII", 9);
 
-ASSERT_EQ(sizeRomeStr, 6);
+    ASSERT_EQ(sizeRomeStr, 6);
 //ASSERT_EQ(strncmp(Str, "CMLXXXVII", 9), 0);
-free(Str);
+    free(Str);
 }
 
 TEST(test, FailTest) {
-size_t num=0;
-ASSERT_EQ(checkNumber(num), -1);
-num=-25536;
-ASSERT_EQ(checkNumber(num), -1);
+    size_t num=0;
+    ASSERT_EQ(checkNumber(num), -1);
+    num=-25536;
+    ASSERT_EQ(checkNumber(num), -1);
 }

@@ -2,7 +2,7 @@
 // Created by Daniil Tchyorny on 07.03.2020.
 //
 
-#include "../include/arabiantorome.h"
+#include "../include/dz.h"
 
 static const char *units = "IVX";
 static const char *dozens = "XLC";

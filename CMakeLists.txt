@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.9)
-project(hw_1 C)
+project(C_IZ1 C)
 enable_language(C CXX)
 set(CMAKE_C_FLAGS  "-std=c11")
 
@@ -14,13 +14,13 @@ add_subdirectory(${CMAKE_BINARY_DIR}/googletest-src
         ${CMAKE_BINARY_DIR}/googletest-build)
 
 enable_testing()
-add_subdirectory(tests)
+add_subdirectory(unit_tests)
 
 include_directories("${PROJECT_SOURCE_DIR}/include")
 
 file(GLOB sources
-        "${PROJECT_SOURCE_DIR}/project/include/*.h"
-        "${PROJECT_SOURCE_DIR}/project/src/*.c"
-        "${PROJECT_SOURCE_DIR}/project/src/*.cpp")
+        "${PROJECT_SOURCE_DIR}/include/*.h"
+        "${PROJECT_SOURCE_DIR}/src/*.c"
+        "${PROJECT_SOURCE_DIR}/src/*.cpp")
 
-add_executable(hw_1 ${sources})
+add_executable(C_IZ1 ${sources})
